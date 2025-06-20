@@ -87,17 +87,17 @@ docker-compose up
 ### 📊 Prometheus + Grafana
 - Prometheus scrapes /metrics from the gateway every 5s
 - Grafana dashboards visualize:
-  -- Request rate
-  -- Error count
-  -- Latency
-  -- Service Uptime
+  - Request rate
+  - Error count
+  - Latency
+  - Service Uptime
 
 ## 📋 Admin Dashboard (/admin_dashboard)
 - Built in Streamlit
 - Display Metrics like:
-    -- ✅ Total Requests
-    -- 🚫 Rate Limit Hits
-    -- ⚡ Avg Latency
+    - ✅ Total Requests
+    - 🚫 Rate Limit Hits
+    - ⚡ Avg Latency
 - Also allows you to restart services via /admin/restart_service
 
 ## 📊 Grafana Login
