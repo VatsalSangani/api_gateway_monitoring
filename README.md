@@ -70,6 +70,46 @@ docker-compose up
 ---
 
 ## 🧪 How It Works
-### API Gateway (/gateway)
+### 📦 API Gateway (/gateway)
 - Routes traffic from /api/service1/<path> to mock_service.
+- Enforces rate limiting using Redis tokens.
+- Handles retry logic for 5xx failures.
+- Exposes metrics at /metrics for Prometheus.
+
+### 🎯 Rate Limiting
+- Users send requests with Authorization: Bearer <token>.
+- Redis key: ratelimit:<token> stores remaining quota.
+- Hits 429 Too Many Requests if over limit.
+
+### 🧪 Mock Service (/mock_service)
+- Simple FastAPI service with a /users route returning JSON.
+
+### 📊 Prometheus + Grafana
+- Prometheus scrapes /metrics from the gateway every 5s
+- Grafana dashboards visualize:
+  -- Request rate
+  -- Error count
+  -- Latency
+  -- Service Uptime
+
+## 📋 Admin Dashboard (/admin_dashboard)
+- Built in Streamlit
+- Display Metrics like:
+    -- ✅ Total Requests
+    -- 🚫 Rate Limit Hits
+    -- ⚡ Avg Latency
+- Also allows you to restart services via /admin/restart_service
+
+## 📊 Grafana Login
+- Visit: http://localhost:3000
+- Username: admin
+- Password: admin
+- It may ask you change this Username and Password so set it accordingly.
+
+## 🪪 License
+MIT License — free to use, fork, and modify.
+
+## 🙌 Credits
+Made with ❤️ by [Vatsal Sangani].
+Powered by Python, Docker, and open-source magic 🪄
 
