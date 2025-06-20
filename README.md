@@ -110,6 +110,6 @@ docker-compose up
 MIT License — free to use, fork, and modify.
 
 ## 🙌 Credits
-Made with ❤️ by [Vatsal Sangani].
+Made with ❤️ by [Vatsal Sangani].<br>
 Powered by Python, Docker, and open-source magic 🪄
 
