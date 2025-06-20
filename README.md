@@ -41,7 +41,18 @@ A full-stack microservice setup built with FastAPI, Redis, Prometheus, Grafana, 
 ├── docker-compose.yml   # Orchestration
 └── README.md
 ```
+---
 
+## 📂 Services
+
+| Service         | Port  | Description                                      |
+|-----------------|-------|--------------------------------------------------|
+| Gateway         | 8080  | FastAPI reverse proxy + rate limiting            |
+| Mock Service    | 8001  | Dummy backend service for routing                |
+| Redis           | 6379  | Token store for rate limiting                    |
+| Prometheus      | 9090  | Metrics collection                               |
+| Grafana         | 3000  | Monitoring dashboards (Login: `admin`/`admin`)   |
+| Admin Dashboard | 8501  | Streamlit UI for restarts and insights           |
 
 ---
 
@@ -56,5 +67,9 @@ cd api_gateway_project
 docker-compose build
 docker-compose up
 ```
-
 ---
+
+## 🧪 How It Works
+### API Gateway (/gateway)
+--- Routes traffic from /api/service1/<path> to mock_service.
+
