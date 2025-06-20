@@ -30,14 +30,7 @@ A full-stack microservice setup built with FastAPI, Redis, Prometheus, Grafana, 
 ---
 
 ## 📁 Project Structure
-.
-├── admin_dashboard/     # Streamlit-based admin GUI
-├── gateway/             # FastAPI API Gateway
-├── mock_service/        # Dummy microservice
-├── prometheus/          # Prometheus config
-├── grafana/             # (optional) Custom dashboards if added
-├── docker-compose.yml   # Orchestration
-└── README.md
+<pre> ```bash . ├── admin_dashboard/ # Streamlit-based admin GUI ├── gateway/ # FastAPI API Gateway ├── mock_service/ # Dummy microservice ├── prometheus/ # Prometheus config ├── grafana/ # (optional) Custom dashboards if added ├── docker-compose.yml # Orchestration └── README.md ``` </pre>
 
 ---
 
