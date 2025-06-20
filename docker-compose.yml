@@ -1,0 +1,41 @@
+version: "3.8"
+
+services:
+  redis:
+    image: redis:6
+    ports:
+      - "6379:6379"
+
+  gateway:
+    build: ./gateway
+    ports:
+      - "8080:8080"
+    depends_on:
+      - redis
+      - mock_service
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock 
+
+  mock_service:
+    build: ./mock_service
+    ports:
+      - "8001:8001"
+
+  prometheus:
+    image: prom/prometheus
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
+
+  grafana:
+    image: grafana/grafana
+    ports:
+      - "3000:3000"
+
+  admin_dashboard:
+    build: ./admin_dashboard
+    ports:
+      - "8501:8501"
+    depends_on:
+      - prometheus
