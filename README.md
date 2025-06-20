@@ -71,5 +71,5 @@ docker-compose up
 
 ## 🧪 How It Works
 ### API Gateway (/gateway)
---- Routes traffic from /api/service1/<path> to mock_service.
+- Routes traffic from /api/service1/<path> to mock_service.
 
